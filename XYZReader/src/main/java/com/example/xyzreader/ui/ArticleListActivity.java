@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +31,7 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
+import com.example.xyzreader.utils.Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -44,11 +49,13 @@ import timber.log.Timber;
  * activity presents a grid of items as cards.
  */
 public class ArticleListActivity extends AppCompatActivity implements
-        LoaderManager.LoaderCallbacks<Cursor> {
+        LoaderManager.LoaderCallbacks<Cursor>,SwipeRefreshLayout.OnRefreshListener{
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.swipe_refresh_layout) SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+    @BindView(R.id.empty_view) TextView mEmptyView;
+    @BindView(R.id.col)CoordinatorLayout mCordinatorLayout;
 
     private ArticleListAdapter mAdapter;
     private final int LOADER_ID = 0;
@@ -68,6 +75,8 @@ public class ArticleListActivity extends AppCompatActivity implements
         mAdapter = new ArticleListAdapter(this);
         mAdapter.setHasStableIds(true);
         mRecyclerView.setAdapter(mAdapter);
+
+        mSwipeRefreshLayout.setOnRefreshListener(this);
 
         getLoaderManager().initLoader(LOADER_ID, null, this);
 
@@ -117,11 +126,25 @@ public class ArticleListActivity extends AppCompatActivity implements
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         mAdapter.swapCursor(cursor);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader)
     {
         mAdapter.swapCursor(null);
+        mSwipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onRefresh() {
+        if(Utils.isNetworkConnectionAvailable(this)) {
+            refresh();
+        }else {
+            mIsRefreshing = false;
+            updateRefreshingUI();
+            Snackbar.make(mCordinatorLayout, getString(R.string.no_internet), Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
     }
 }

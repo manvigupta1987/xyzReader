@@ -13,6 +13,7 @@ import android.text.format.Time;
 import android.util.Log;
 
 import com.example.xyzreader.remote.RemoteEndpointUtil;
+import com.example.xyzreader.utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,8 +21,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import timber.log.Timber;
+
 public class UpdaterService extends IntentService {
-    private static final String TAG = "UpdaterService";
 
     public static final String BROADCAST_ACTION_STATE_CHANGE
             = "com.example.xyzreader.intent.action.STATE_CHANGE";
@@ -29,21 +31,17 @@ public class UpdaterService extends IntentService {
             = "com.example.xyzreader.intent.extra.REFRESHING";
 
     public UpdaterService() {
-        super(TAG);
+        super("UpdaterService");
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
         Time time = new Time();
 
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo ni = cm.getActiveNetworkInfo();
-        if (ni == null || !ni.isConnected()) {
-            Log.w(TAG, "Not online, not refreshing.");
+        if(!Utils.isNetworkConnectionAvailable(this)){
             return;
         }
-
-        sendStickyBroadcast(
+        sendBroadcast(
                 new Intent(BROADCAST_ACTION_STATE_CHANGE).putExtra(EXTRA_REFRESHING, true));
 
         // Don't even inspect the intent, we only do one thing, and that's fetch content.
@@ -77,10 +75,10 @@ public class UpdaterService extends IntentService {
             getContentResolver().applyBatch(ItemsContract.CONTENT_AUTHORITY, cpo);
 
         } catch (JSONException | RemoteException | OperationApplicationException e) {
-            Log.e(TAG, "Error updating content.", e);
+            Timber.e(e, "Error updating content.");
         }
 
-        sendStickyBroadcast(
+        sendBroadcast(
                 new Intent(BROADCAST_ACTION_STATE_CHANGE).putExtra(EXTRA_REFRESHING, false));
     }
 }
