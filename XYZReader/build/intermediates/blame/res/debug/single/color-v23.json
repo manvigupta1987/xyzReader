@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
+        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/color-v23/design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/color-v23/abc_tint_default.xml"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout-v11/notification_template_big_media_custom.xml"
+    }
+]

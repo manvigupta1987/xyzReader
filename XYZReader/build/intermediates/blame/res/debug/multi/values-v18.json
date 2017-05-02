@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 48,
+                    "endOffset": 99
+                },
+                "from": {
+                    "file": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/values-v18/values-v18.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 48,
+                        "endOffset": 99
+                    }
+                }
+            }
+        ]
+    }
+]

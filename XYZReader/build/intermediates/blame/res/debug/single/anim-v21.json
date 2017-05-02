@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/anim-v21/fab_state_list_anim.xml",
+        "source": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/anim-v21/fab_state_list_anim.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    }
+]
