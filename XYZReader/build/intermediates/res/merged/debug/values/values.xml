@@ -624,8 +624,11 @@
     <string name="action_share">Share</string>
     <string name="app_name">XYZ Reader</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="author_transition">Author Transition</string>
+    <string name="bookName_transition">Book Transition</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="image_transition">ImageTransition</string>
     <string name="no_books">No Books are Present. Please try after some. </string>
     <string name="no_internet">No Internet Connection. Please check your network settings</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -1980,9 +1983,6 @@
     </style>
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
-    </style>
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
     <style name="Theme.Design" parent="Theme.AppCompat">
         <item name="textColorError">@color/design_textinput_error_color_dark</item>

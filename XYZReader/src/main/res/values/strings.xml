@@ -8,5 +8,7 @@
     <string name="no_internet">No Internet Connection. Please check your network settings</string>
     <string name="no_books">No Books are Present. Please try after some. </string>
     <string name="up">Up</string>
-
+    <string name="image_transition">ImageTransition</string>
+    <string name="bookName_transition">Book Transition</string>
+    <string name="author_transition">Author Transition</string>
 </resources>

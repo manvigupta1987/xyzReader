@@ -27,6 +27,7 @@
                 android:layout_height="?attr/listPreferredItemHeight"
                 android:layout_marginTop="?attr/actionBarSize"
                 android:contentDescription="@string/app_name"
+                android:layout_gravity ="bottom"
                 android:src="@drawable/logo" />
         </android.support.v7.widget.Toolbar>
 

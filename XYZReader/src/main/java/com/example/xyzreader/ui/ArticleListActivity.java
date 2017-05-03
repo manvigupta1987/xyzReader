@@ -78,7 +78,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
 
-        getLoaderManager().initLoader(LOADER_ID, null, this);
+        getLoaderManager().restartLoader(LOADER_ID, null, this);
 
         if (savedInstanceState == null) {
             refresh();

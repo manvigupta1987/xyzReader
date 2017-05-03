@@ -34,5 +34,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile "com.android.support:design:${androidSupportVersion}"
+    compile 'com.squareup.picasso:picasso:2.5.2'
     compile files('libs/volley.jar')
 }

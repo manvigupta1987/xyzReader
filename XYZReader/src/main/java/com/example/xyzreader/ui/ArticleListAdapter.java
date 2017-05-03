@@ -3,6 +3,10 @@ package com.example.xyzreader.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.format.DateUtils;
@@ -20,6 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
@@ -54,8 +60,14 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mContext.startActivity(new Intent(Intent.ACTION_VIEW,
-                        ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+
+                Pair<View, String> p1 = Pair.create((View)vh.thumbnailView, mContext.getString(R.string.image_transition));
+//                Pair<View, String> p2 = Pair.create((View)vh.titleView,mContext.getString(R.string.bookName_transition) );
+//                Pair<View, String> p3 = Pair.create((View)vh.subtitleView, mContext.getString(R.string.author_transition));
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)mContext,p1);
+                mContext.startActivity(intent,options.toBundle());
             }
         });
         return vh;
@@ -115,15 +127,13 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     }
 
     public class ArticalListViewHolder extends RecyclerView.ViewHolder {
-        public DynamicHeightNetworkImageView thumbnailView;
-        public TextView titleView;
-        public TextView subtitleView;
+        @BindView(R.id.thumbnail) DynamicHeightNetworkImageView thumbnailView;
+        @BindView(R.id.article_title) TextView titleView;
+        @BindView(R.id.article_subtitle) TextView subtitleView;
 
         public ArticalListViewHolder(View view) {
             super(view);
-            thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
-            titleView = (TextView) view.findViewById(R.id.article_title);
-            subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
+            ButterKnife.bind(this,view);
         }
     }
 }
