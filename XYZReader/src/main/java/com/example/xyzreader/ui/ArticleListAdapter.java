@@ -63,10 +63,10 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
 
-                Pair<View, String> p1 = Pair.create((View)vh.thumbnailView, mContext.getString(R.string.image_transition));
-//                Pair<View, String> p2 = Pair.create((View)vh.titleView,mContext.getString(R.string.bookName_transition) );
-//                Pair<View, String> p3 = Pair.create((View)vh.subtitleView, mContext.getString(R.string.author_transition));
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)mContext,p1);
+                Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail), mContext.getString(R.string.image_transition));
+                Pair<View, String> p2 = Pair.create(view.findViewById(R.id.article_title),mContext.getString(R.string.bookName_transition) );
+                Pair<View, String> p3 = Pair.create(view.findViewById(R.id.article_subtitle), mContext.getString(R.string.author_transition));
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)mContext,p1, p2, p3);
                 mContext.startActivity(intent,options.toBundle());
             }
         });
