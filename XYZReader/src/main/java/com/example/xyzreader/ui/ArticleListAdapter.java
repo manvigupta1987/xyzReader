@@ -67,7 +67,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
-                intent.putExtra(view.findViewById(R.id.thumbnail).getTransitionName(), Utils.TRANSITION_STRING);
+                intent.putExtra(Utils.TRANSITION_STRING,view.findViewById(R.id.thumbnail).getTransitionName());
 
                 Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail),view.findViewById(R.id.thumbnail).getTransitionName());
                 //Pair<View, String> p2 = Pair.create(view.findViewById(R.id.article_title),mContext.getString(R.string.bookName_transition) );

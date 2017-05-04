@@ -36,7 +36,13 @@
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags ="scroll|enterAlways"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">>
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <FrameLayout
+                    android:id="@+id/up_container"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize">
 
                 <ImageButton
                     android:id="@+id/action_up"
@@ -47,6 +53,7 @@
                     android:contentDescription="@string/up"
                     android:src="@drawable/ic_arrow_back"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+                </FrameLayout>
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
