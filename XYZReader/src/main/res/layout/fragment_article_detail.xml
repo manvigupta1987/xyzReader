@@ -105,6 +105,8 @@
                     android:textColorLink="@color/theme_accent"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textSize="@dimen/detail_body_text_size"
+                    android:ellipsize="end"
+                    android:maxLines="100"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
 
             </LinearLayout>

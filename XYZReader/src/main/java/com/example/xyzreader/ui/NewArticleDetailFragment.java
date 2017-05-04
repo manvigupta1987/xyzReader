@@ -11,7 +11,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
 import android.text.format.DateUtils;
@@ -19,6 +21,7 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -227,6 +230,18 @@ public class NewArticleDetailFragment extends Fragment implements
             mCursor = null;
         }
         bindViews();
+        mRootView.getViewTreeObserver().addOnPreDrawListener(
+                new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        mRootView.getViewTreeObserver().removeOnPreDrawListener(this);
+                        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
+                            AppCompatActivity activity = (AppCompatActivity) getActivity();
+                            activity.supportStartPostponedEnterTransition();
+                        }
+                        return true;
+                    }
+                });
     }
 
     @Override
