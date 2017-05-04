@@ -3,9 +3,12 @@ package com.example.xyzreader.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -73,6 +76,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         return vh;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(ArticalListViewHolder holder, int position) {
         mCursor.moveToPosition(position);
@@ -97,6 +101,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                 mCursor.getString(ArticleLoader.Query.THUMB_URL),
                 ImageLoaderHelper.getInstance(mContext).getImageLoader());
         holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+        holder.thumbnailView.setTransitionName(mContext.getString(R.string.image_transition));
     }
 
     private Date parsePublishedDate() {

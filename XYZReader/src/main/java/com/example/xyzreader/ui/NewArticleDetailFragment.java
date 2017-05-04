@@ -1,5 +1,7 @@
 package com.example.xyzreader.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
@@ -10,7 +12,9 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +24,7 @@ import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -53,7 +58,7 @@ public class NewArticleDetailFragment extends Fragment implements
     private Cursor mCursor;
     private CollapsingToolbarLayout mCollapsingToolBar;
     private View mUpButton;
-
+    private FloatingActionButton mFab;
 
     public NewArticleDetailFragment() {
     }
@@ -93,18 +98,35 @@ public class NewArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         mUpButton = (View)mRootView.findViewById(R.id.action_up);
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+        mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
+                toggleFabMenu();
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
                         .setText("Some sample text")
                         .getIntent(), getString(R.string.action_share)));
             }
         });
-
         bindViews();
         return mRootView;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void toggleFabMenu(){
+
+        // get the center for the clipping circle
+        int cx = mFab.getWidth()/2;
+        int cy = mFab.getHeight()/2;
+
+        // get the initial radius for the clipping circle
+        float initialRadius = (float) Math.hypot(cx, cy);
+
+        // create the animation (the final radius is zero)
+        Animator animator = ViewAnimationUtils.createCircularReveal(mFab, cx, cy, initialRadius, 0).setDuration(1000);
+        animator.start();
     }
 
 

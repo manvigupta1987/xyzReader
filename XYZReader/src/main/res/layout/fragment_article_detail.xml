@@ -31,6 +31,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
                 android:transitionName="@string/image_transition"/>
 
             <android.support.v7.widget.Toolbar
@@ -112,9 +113,9 @@
             </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <ImageButton android:id="@+id/share_fab"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:background="@drawable/add_fab_background"
+    <android.support.design.widget.FloatingActionButton android:id="@+id/share_fab"
+        android:stateListAnimator="@animator/fab_state_list_anim"
+        android:background="@drawable/btn_drawable"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
@@ -122,6 +123,6 @@
         android:layout_height="56dp"
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
-
+        android:contentDescription="@string/action_share"
+        android:translationZ="12dp"/>
 </android.support.design.widget.CoordinatorLayout>
