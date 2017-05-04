@@ -9,20 +9,21 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:elevation="@dimen/app_bar_elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"> <!-- each child of appbarlayout defines scroll flags which defines
+            app:layout_scrollFlags="scroll"> <!-- each child of appbarlayout defines scroll flags which defines
             the behaviour when nested scrolling takes place. -->
 
             <ImageView
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
                 android:fitsSystemWindows="true"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
@@ -33,7 +34,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:elevation="0dp"
+                android:elevation="@dimen/toolbar_elevation"
                 app:layout_collapseMode="pin"
                 app:layout_scrollFlags ="scroll|enterAlways"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -96,16 +97,14 @@
                         android:textColor="#fff"
                         android:textStyle="bold"
                         android:textSize="@dimen/detail_title_text_size"
-                        android:lineSpacingMultiplier="0.9"
-                        android:transitionName="@string/bookName_transition"/>
+                        android:lineSpacingMultiplier="0.9"/>
 
                     <TextView
                         android:id="@+id/article_byline"
                         style="?android:attr/textAppearanceSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#8fff"
-                        android:transitionName="@string/author_transition"/>
+                        android:textColor="#8fff" />
 
                 </LinearLayout>
                 <TextView
@@ -113,10 +112,12 @@
                     style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16sp"
-                    android:layout_marginRight="16sp"
+                    android:layout_marginTop="@dimen/margin_left"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginStart="@dimen/margin_left"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_marginEnd="@dimen/margin_right"
                     android:textColorLink="@color/theme_accent"
-                    android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textSize="@dimen/detail_body_text_size"
                     android:ellipsize="end"
                     android:maxLines="5"

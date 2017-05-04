@@ -84,6 +84,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     public void onBindViewHolder(ArticalListViewHolder holder, int position) {
         mCursor.moveToPosition(position);
         holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+        holder.titleView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
         Date publishedDate = parsePublishedDate();
         if (!publishedDate.before(START_OF_EPOCH.getTime())) {
 
@@ -100,10 +101,12 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                             + "<br/>" + " by "
                             + mCursor.getString(ArticleLoader.Query.AUTHOR)));
         }
+        holder.subtitleView.setContentDescription(mContext.getString(R.string.a11y_book_subtitle,holder.subtitleView.getText()));
         holder.thumbnailView.setImageUrl(
                 mCursor.getString(ArticleLoader.Query.THUMB_URL),
                 ImageLoaderHelper.getInstance(mContext).getImageLoader());
         holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+        holder.thumbnailView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
         ViewCompat.setTransitionName(holder.thumbnailView,mContext.getString(R.string.image_transition) + position);
     }
 

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">XYZ Reader</string>
     <string name="welcome_xyz_reader">Welcome to XYZ Reader!</string>
@@ -11,4 +11,7 @@
     <string name="image_transition">ImageTransition</string>
     <string name="bookName_transition">Book Transition</string>
     <string name="author_transition">Author Transition</string>
+    <string name="a11y_book_image">Book Title: <xliff:g id="title">%1$s</xliff:g></string>
+    <string name="a11y_book_subtitle">Book Author: <xliff:g id="title">%1$s</xliff:g></string>
+
 </resources>

@@ -30,6 +30,7 @@ import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -63,6 +64,9 @@ public class NewArticleDetailFragment extends Fragment implements
     private CollapsingToolbarLayout mCollapsingToolBar;
     private View mUpButton;
     private FloatingActionButton mFab;
+    private View mUpButtonContainer;
+    private int mTopInset;
+    private int mSelectedItemUpButtonFloor;
 
     public NewArticleDetailFragment() {
     }
@@ -101,6 +105,7 @@ public class NewArticleDetailFragment extends Fragment implements
         getLoaderManager().initLoader(0, null, this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -108,9 +113,25 @@ public class NewArticleDetailFragment extends Fragment implements
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         final Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        //((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //To disable the collapsing tool bar title.
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
+        mUpButtonContainer = (View)mRootView.findViewById(R.id.up_container);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+                @Override
+                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                    view.onApplyWindowInsets(windowInsets);
+                    mTopInset = windowInsets.getSystemWindowInsetTop();
+                    mUpButtonContainer.setTranslationY(mTopInset);
+                    updateUpButtonPosition();
+                    return windowInsets;
+                }
+            });
+        }
+
         mUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,6 +154,12 @@ public class NewArticleDetailFragment extends Fragment implements
         });
         bindViews();
         return mRootView;
+    }
+
+    private void updateUpButtonPosition() {
+        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
+        mSelectedItemUpButtonFloor = mPhotoView.getHeight();
+        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -168,6 +195,7 @@ public class NewArticleDetailFragment extends Fragment implements
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
             titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            titleView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
             String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
             Date publishedDate = Utils.parsePublishedDate(date);
             if (!publishedDate.before(Utils.START_OF_EPOCH.getTime())) {
@@ -202,6 +230,7 @@ public class NewArticleDetailFragment extends Fragment implements
                 }
             });
             mPhotoView.setTransitionName(mTransitionName);
+            mPhotoView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
 //            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
 //                    .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
 //                        @Override

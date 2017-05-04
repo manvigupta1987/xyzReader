@@ -4,10 +4,12 @@
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
     app:cardPreventCornerOverlap="false"
-    android:layout_marginLeft="2dp"
-    android:layout_marginRight="2dp"
-    android:layout_marginTop="2dp"
-    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="@dimen/card_margin"
+    android:layout_marginStart="@dimen/card_margin"
+    android:layout_marginRight="@dimen/card_margin"
+    android:layout_marginEnd="@dimen/card_margin"
+    android:layout_marginTop="@dimen/card_margin"
+    android:layout_marginBottom="@dimen/card_margin"
     android:elevation="8dp"
     android:clickable="true"
     android:focusable="true"
@@ -23,7 +25,8 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:contentDescription=""/>
 
         <TextView
             android:id="@+id/article_title"
