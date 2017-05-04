@@ -1,7 +1,6 @@
 package com.example.xyzreader.ui;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
@@ -15,9 +14,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
@@ -44,15 +41,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Date;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import timber.log.Timber;
 
 /**
  * Created by manvi on 3/5/17.
  */
 
-public class NewArticleDetailFragment extends Fragment implements
+public class ArticleDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     public static final String ARG_ITEM_ID = "item_id";
@@ -60,22 +55,22 @@ public class NewArticleDetailFragment extends Fragment implements
     private String mTransitionName;
     private View mRootView;
     private ImageView mPhotoView;
+    private ImageButton mUpButton;
+    private View mUpButtonContainer;
     private Cursor mCursor;
     private CollapsingToolbarLayout mCollapsingToolBar;
-    private View mUpButton;
     private FloatingActionButton mFab;
-    private View mUpButtonContainer;
     private int mTopInset;
     private int mSelectedItemUpButtonFloor;
 
-    public NewArticleDetailFragment() {
+    public ArticleDetailFragment() {
     }
 
-    public static NewArticleDetailFragment newInstance(long itemId, String transitionName) {
+    public static ArticleDetailFragment newInstance(long itemId, String transitionName) {
         Bundle arguments = new Bundle();
         arguments.putLong(ARG_ITEM_ID, itemId);
         arguments.putString(Utils.TRANSITION_STRING,transitionName);
-        NewArticleDetailFragment fragment = new NewArticleDetailFragment();
+        ArticleDetailFragment fragment = new ArticleDetailFragment();
         fragment.setArguments(arguments);
         return fragment;
     }
@@ -97,7 +92,6 @@ public class NewArticleDetailFragment extends Fragment implements
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ButterKnife.bind(getActivity());
         // In support library r8, calling initLoader for a fragment in a FragmentPagerAdapter in
         // the fragment's onCreate may cause the same LoaderManager to be dealt to multiple
         // fragments because their mIndex is -1 (haven't been added to the activity yet). Thus,
@@ -110,14 +104,13 @@ public class NewArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
+        mUpButtonContainer = (View) mRootView.findViewById(R.id.up_container);
+        mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         final Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         //To disable the collapsing tool bar title.
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
-        mUpButtonContainer = (View)mRootView.findViewById(R.id.up_container);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
@@ -140,7 +133,6 @@ public class NewArticleDetailFragment extends Fragment implements
         });
 
         mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
-
         mFab.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
@@ -231,26 +223,6 @@ public class NewArticleDetailFragment extends Fragment implements
             });
             mPhotoView.setTransitionName(mTransitionName);
             mPhotoView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
-//            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
-//                    .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
-//                        @Override
-//                        public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
-//                            Bitmap bitmap = imageContainer.getBitmap();
-//                            if (bitmap != null) {
-//                                Palette p = Palette.generate(bitmap, 12);
-//                                mMutedColor = p.getDarkMutedColor(0xFF333333);
-//                                mPhotoView.setImageBitmap(imageContainer.getBitmap());
-//                                mRootView.findViewById(R.id.meta_bar)
-//                                        .setBackgroundColor(mMutedColor);
-////                                updateStatusBar();
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onErrorResponse(VolleyError volleyError) {
-//
-//                        }
-//                    });
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
@@ -318,6 +290,7 @@ public class NewArticleDetailFragment extends Fragment implements
                 });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursor = null;

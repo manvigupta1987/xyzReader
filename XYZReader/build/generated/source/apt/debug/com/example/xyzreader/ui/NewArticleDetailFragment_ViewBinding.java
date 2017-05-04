@@ -3,8 +3,8 @@ package com.example.xyzreader.ui;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.view.View;
+import android.widget.ImageView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.example.xyzreader.R;
@@ -18,7 +18,7 @@ public class NewArticleDetailFragment_ViewBinding implements Unbinder {
   public NewArticleDetailFragment_ViewBinding(NewArticleDetailFragment target, View source) {
     this.target = target;
 
-    target.mCollapsingToolBar = Utils.findRequiredViewAsType(source, R.id.collapsing_toolbar, "field 'mCollapsingToolBar'", CollapsingToolbarLayout.class);
+    target.mPhotoView = Utils.findRequiredViewAsType(source, R.id.photo, "field 'mPhotoView'", ImageView.class);
   }
 
   @Override
@@ -28,6 +28,6 @@ public class NewArticleDetailFragment_ViewBinding implements Unbinder {
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
     this.target = null;
 
-    target.mCollapsingToolBar = null;
+    target.mPhotoView = null;
   }
 }

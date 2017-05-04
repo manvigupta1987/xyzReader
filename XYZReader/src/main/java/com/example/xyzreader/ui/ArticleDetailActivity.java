@@ -135,7 +135,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             mCursor.moveToPosition(position);
-            return NewArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID),mTransitionName);
+            return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID),mTransitionName);
         }
 
         @Override
