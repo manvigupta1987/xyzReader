@@ -14,5 +14,6 @@
 
     <dimen name="card_margin">4dp</dimen>
     <dimen name="card_elevation">8dp</dimen>
+    <dimen name="app_bar_height">168dp</dimen>
 
 </resources>

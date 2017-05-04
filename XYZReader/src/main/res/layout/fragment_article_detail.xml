@@ -36,6 +36,8 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="@dimen/toolbar_elevation"
                 app:layout_collapseMode="pin"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
                 app:layout_scrollFlags ="scroll|enterAlways"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -137,5 +139,6 @@
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share"
-        android:translationZ="12dp"/>
+        app:pressedTranslationZ="12dp"
+        app:fabSize="normal"/>
 </android.support.design.widget.CoordinatorLayout>
