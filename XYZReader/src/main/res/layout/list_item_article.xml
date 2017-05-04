@@ -8,7 +8,7 @@
     android:layout_marginRight="2dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
-    android:elevation="4dp"
+    android:elevation="8dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground">
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/article_title"
-            style="@style/TextAppearance.AppCompat.Subhead"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:fontFamily="sans-serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/article_subtitle"
-            style="@style/TextAppearance.AppCompat.Small"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
