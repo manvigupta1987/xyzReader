@@ -17,8 +17,10 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -29,6 +31,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,6 +56,7 @@ public class NewArticleDetailFragment extends Fragment implements
 
     public static final String ARG_ITEM_ID = "item_id";
     private long mItemId;
+    private String mTransitionName;
     private View mRootView;
     private ImageView mPhotoView;
     private Cursor mCursor;
@@ -63,9 +67,10 @@ public class NewArticleDetailFragment extends Fragment implements
     public NewArticleDetailFragment() {
     }
 
-    public static NewArticleDetailFragment newInstance(long itemId) {
+    public static NewArticleDetailFragment newInstance(long itemId, String transitionName) {
         Bundle arguments = new Bundle();
         arguments.putLong(ARG_ITEM_ID, itemId);
+        arguments.putString(Utils.TRANSITION_STRING,transitionName);
         NewArticleDetailFragment fragment = new NewArticleDetailFragment();
         fragment.setArguments(arguments);
         return fragment;
@@ -78,8 +83,12 @@ public class NewArticleDetailFragment extends Fragment implements
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
+        if (getArguments().containsKey(Utils.TRANSITION_STRING)) {
+            mTransitionName = getArguments().getString(Utils.TRANSITION_STRING);
+        }
         setHasOptionsMenu(true);
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -97,8 +106,20 @@ public class NewArticleDetailFragment extends Fragment implements
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        mUpButton = (View)mRootView.findViewById(R.id.action_up);
+        final Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        //((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
+        mUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((AppCompatActivity)getActivity()).onSupportNavigateUp();
+            }
+        });
+
         mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+
         mFab.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
@@ -130,6 +151,7 @@ public class NewArticleDetailFragment extends Fragment implements
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void bindViews() {
         if (mRootView == null) {
             return;
@@ -179,6 +201,7 @@ public class NewArticleDetailFragment extends Fragment implements
 
                 }
             });
+            mPhotoView.setTransitionName(mTransitionName);
 //            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
 //                    .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
 //                        @Override

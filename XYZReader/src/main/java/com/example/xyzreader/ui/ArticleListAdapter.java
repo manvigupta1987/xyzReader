@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
+import com.example.xyzreader.utils.Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -61,12 +62,14 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_article, viewGroup, false);
         final ArticalListViewHolder vh = new ArticalListViewHolder(view);
         view.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                intent.putExtra(view.findViewById(R.id.thumbnail).getTransitionName(), Utils.TRANSITION_STRING);
 
-                Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail), mContext.getString(R.string.image_transition));
+                Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail),view.findViewById(R.id.thumbnail).getTransitionName());
                 //Pair<View, String> p2 = Pair.create(view.findViewById(R.id.article_title),mContext.getString(R.string.bookName_transition) );
                 //Pair<View, String> p3 = Pair.create(view.findViewById(R.id.article_subtitle), mContext.getString(R.string.author_transition));
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)mContext,p1);
@@ -101,7 +104,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                 mCursor.getString(ArticleLoader.Query.THUMB_URL),
                 ImageLoaderHelper.getInstance(mContext).getImageLoader());
         holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
-        holder.thumbnailView.setTransitionName(mContext.getString(R.string.image_transition));
+        ViewCompat.setTransitionName(holder.thumbnailView,mContext.getString(R.string.image_transition) + position);
     }
 
     private Date parsePublishedDate() {

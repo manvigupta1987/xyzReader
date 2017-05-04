@@ -20,6 +20,7 @@ import timber.log.Timber;
 
 public final class Utils {
 
+    public static String TRANSITION_STRING = "transition";
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
     public static SimpleDateFormat outputFormat = new SimpleDateFormat();
