@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">  <!-- this attribute is not required for two pane tablet layout since it will shrink the action bar on the left activity as well.-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".40">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".75">
+
+
+               <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_share"/>
+                </LinearLayout>
+
+                <include layout="@layout/metabar"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".25"/>
+            </LinearLayout>
+        </FrameLayout>
+        
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_weight=".60">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:maxWidth="@dimen/detail_card_max_width"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/article_body"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/divider_left"
+                        android:layout_marginStart="@dimen/divider_left"
+                        android:layout_marginRight="@dimen/margin_right"
+                        android:layout_marginEnd="@dimen/margin_right"
+                        android:textColorLink="@color/theme_accent"
+                        android:textSize="@dimen/detail_body_text_size"
+                        android:ellipsize="end"
+                        android:maxLines="100"
+                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/share_fab"
+        android:background="@drawable/btn_drawable"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share"
+        android:elevation="@dimen/fab_elevation"
+        android:contentDescription="@string/action_share"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        app:fabSize="normal"
+        app:borderWidth="0dp"/>
+</android.support.design.widget.CoordinatorLayout>

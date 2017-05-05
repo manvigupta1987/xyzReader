@@ -56,12 +56,10 @@ public class ArticleDetailFragment extends Fragment implements
     private View mRootView;
     private ImageView mPhotoView;
     private ImageButton mUpButton;
-    private View mUpButtonContainer;
     private Cursor mCursor;
     private CollapsingToolbarLayout mCollapsingToolBar;
     private FloatingActionButton mFab;
-    private int mTopInset;
-    private int mSelectedItemUpButtonFloor;
+    private boolean landscape_layout = false;
 
     public ArticleDetailFragment() {
     }
@@ -104,33 +102,24 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mUpButtonContainer = (View) mRootView.findViewById(R.id.up_container);
+        landscape_layout = mRootView.getResources().getBoolean(R.bool.landscape);
+        //mUpButtonContainer = (View) mRootView.findViewById(R.id.up_container);
         mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        final Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        //To disable the collapsing tool bar title.
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+        if(!landscape_layout) {
+            final Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+            //To disable the collapsing tool bar title.
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            mUpButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    view.onApplyWindowInsets(windowInsets);
-                    mTopInset = windowInsets.getSystemWindowInsetTop();
-                    mUpButtonContainer.setTranslationY(mTopInset);
-                    updateUpButtonPosition();
-                    return windowInsets;
+                public void onClick(View view) {
+                    ((AppCompatActivity) getActivity()).onSupportNavigateUp();
                 }
             });
         }
-
-        mUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((AppCompatActivity)getActivity()).onSupportNavigateUp();
-            }
-        });
 
         mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
         mFab.setOnClickListener(new View.OnClickListener() {
@@ -146,12 +135,6 @@ public class ArticleDetailFragment extends Fragment implements
         });
         bindViews();
         return mRootView;
-    }
-
-    private void updateUpButtonPosition() {
-        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-        mSelectedItemUpButtonFloor = mPhotoView.getHeight();
-        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -238,11 +221,13 @@ public class ArticleDetailFragment extends Fragment implements
             public void onGenerated(Palette palette) {
                 int primaryDark = getResources().getColor(R.color.primary_dark);
                 int primary = getResources().getColor(R.color.primary_light);
-                mCollapsingToolBar = (CollapsingToolbarLayout)getActivity().findViewById(R.id.collapsing_toolbar);
-                mCollapsingToolBar.setContentScrimColor(palette.getMutedColor(primary));
-                mCollapsingToolBar.setStatusBarScrimColor(palette.getDarkMutedColor(primaryDark));
-                mRootView.findViewById(R.id.meta_bar).setBackgroundColor(palette.getDarkMutedColor(0xFF333333));
+                if(!landscape_layout) {
+                    mCollapsingToolBar = (CollapsingToolbarLayout) getActivity().findViewById(R.id.collapsing_toolbar);
+                    mCollapsingToolBar.setContentScrimColor(palette.getMutedColor(primary));
+                    mCollapsingToolBar.setStatusBarScrimColor(palette.getDarkMutedColor(primaryDark));
+                }
                 setStatusBarColor(palette.getDarkMutedColor(primaryDark));
+                mRootView.findViewById(R.id.meta_bar).setBackgroundColor(palette.getDarkMutedColor(0xFF333333));
             }
         });
     }

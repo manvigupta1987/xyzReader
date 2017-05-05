@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/activity_article_detail.xml",
         "source": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/layout/activity_article_detail.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
@@ -18,6 +18,10 @@
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
         "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/metabar.xml",
+        "source": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/layout/metabar.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",

@@ -3,7 +3,7 @@
     android:id="@+id/main_content"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true">  <!-- this attribute is not required for two pane tablet layout since it will shrink the action bar on the left activity as well.-->
+    android:fitsSystemWindows="true">  <!-- this attribute is not required for two pane tablet layout since it will shrink the action bar on the left activity as well.-->  <!-- this attribute is not required for two pane tablet layout since it will shrink the action bar on the left activity as well.-->
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -23,12 +23,12 @@
             <ImageView
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="@dimen/image_height"
                 android:fitsSystemWindows="true"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
+                app:layout_scrollFlags="scroll"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -36,8 +36,8 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="@dimen/toolbar_elevation"
                 app:layout_collapseMode="pin"
-                app:contentInsetEnd="0dp"
-                app:contentInsetStart="0dp"
+                app:contentInsetEnd="@dimen/consent_insert"
+                app:contentInsetStart="@dimen/consent_insert"
                 app:layout_scrollFlags ="scroll|enterAlways"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -47,15 +47,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize">
 
-                <ImageButton
-                    android:id="@+id/action_up"
-                    android:layout_marginTop="6dp"
-                    android:layout_width="?actionBarSize"
-                    android:layout_height="?actionBarSize"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/up"
-                    android:src="@drawable/ic_arrow_back"
-                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+                    <ImageButton
+                        android:id="@+id/action_up"
+                        android:layout_marginTop="@dimen/image_button_top_margin"
+                        android:layout_width="?actionBarSize"
+                        android:layout_height="?actionBarSize"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/up"
+                        android:src="@drawable/ic_arrow_back"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
                 </FrameLayout>
 
             </android.support.v7.widget.Toolbar>
@@ -68,77 +68,47 @@
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <LinearLayout
-                android:orientation="vertical"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="@dimen/detail_card_max_width"
+            android:background="#fff">
+
+            <include layout="@layout/metabar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/article_body"
+                style="?android:attr/textAppearanceMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:maxWidth="@dimen/detail_card_max_width"
-                android:background="#fff"
-                android:elevation="2dp">
+                android:layout_marginTop="@dimen/margin_left"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginStart="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginEnd="@dimen/margin_right"
+                android:textColorLink="@color/theme_accent"
+                android:textSize="@dimen/detail_body_text_size"
+                android:ellipsize="end"
+                android:maxLines="100"
+                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
 
-                <LinearLayout
-                    android:id="@+id/meta_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#333"
-                    android:layout_gravity="bottom"
-                    android:orientation="vertical"
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingTop="@dimen/detail_metabar_vert_padding">
-
-                    <TextView
-                        android:id="@+id/article_title"
-                        style="?android:attr/textAppearanceLarge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                        android:fontFamily="sans-serif-condensed"
-                        android:textColor="#fff"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/detail_title_text_size"
-                        android:lineSpacingMultiplier="0.9"/>
-
-                    <TextView
-                        android:id="@+id/article_byline"
-                        style="?android:attr/textAppearanceSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#8fff" />
-
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/article_body"
-                    style="?android:attr/textAppearanceMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_left"
-                    android:layout_marginLeft="@dimen/margin_left"
-                    android:layout_marginStart="@dimen/margin_left"
-                    android:layout_marginRight="@dimen/margin_right"
-                    android:layout_marginEnd="@dimen/margin_right"
-                    android:textColorLink="@color/theme_accent"
-                    android:textSize="@dimen/detail_body_text_size"
-                    android:ellipsize="end"
-                    android:maxLines="5"
-                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
-
-            </LinearLayout>
+        </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton android:id="@+id/share_fab"
-        android:stateListAnimator="@animator/fab_state_list_anim"
         android:background="@drawable/btn_drawable"
         android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share"
-        app:pressedTranslationZ="12dp"
-        app:fabSize="normal"/>
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        app:fabSize="normal"
+        app:borderWidth="0dp" />
 </android.support.design.widget.CoordinatorLayout>
