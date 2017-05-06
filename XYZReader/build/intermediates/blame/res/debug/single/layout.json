@@ -32,10 +32,6 @@
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_list_menu_item_radio.xml"
     },
@@ -112,10 +108,6 @@
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/notification_template_icon_group.xml"
-    },
-    {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/notification_template_part_time.xml"
     },
@@ -154,10 +146,6 @@
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/layout/notification_action.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",

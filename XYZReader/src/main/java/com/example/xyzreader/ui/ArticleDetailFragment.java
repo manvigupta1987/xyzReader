@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
@@ -98,7 +99,6 @@ public class ArticleDetailFragment extends Fragment implements
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -128,13 +128,15 @@ public class ArticleDetailFragment extends Fragment implements
             final Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
             ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-//            mUpButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    ((AppCompatActivity) getActivity()).onSupportNavigateUp();
-//                }
-//            });
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //((AppCompatActivity) getActivity()).supportFinishAfterTransition();
+                    ((AppCompatActivity) getActivity()).onSupportNavigateUp();
+                }
+            });
         }
 
         mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
