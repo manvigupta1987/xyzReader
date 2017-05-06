@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.res.ColorStateList;
@@ -64,6 +65,7 @@ public class ArticleDetailFragment extends Fragment implements
     private TextView titleView;
     private FloatingActionButton mFab;
     private boolean landscape_layout = false;
+    private Context mContext;
 
     public ArticleDetailFragment() {
     }
@@ -75,6 +77,12 @@ public class ArticleDetailFragment extends Fragment implements
         ArticleDetailFragment fragment = new ArticleDetailFragment();
         fragment.setArguments(arguments);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
     @Override
@@ -108,7 +116,7 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         landscape_layout = mRootView.getResources().getBoolean(R.bool.landscape);
         //mUpButtonContainer = (View) mRootView.findViewById(R.id.up_container);
-        mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
+        // mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         if(!landscape_layout){
             mCollapsingToolBar = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
@@ -119,15 +127,14 @@ public class ArticleDetailFragment extends Fragment implements
         if(!landscape_layout) {
             final Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
             ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-            //To disable the collapsing tool bar title.
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            mUpButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((AppCompatActivity) getActivity()).onSupportNavigateUp();
-                }
-            });
+//            mUpButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    ((AppCompatActivity) getActivity()).onSupportNavigateUp();
+//                }
+//            });
         }
 
         mFab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
@@ -182,6 +189,8 @@ public class ArticleDetailFragment extends Fragment implements
             if(!landscape_layout) {
                 mCollapsingToolBar.setTitleEnabled(true);
                 mCollapsingToolBar.setTitle(text);
+                //((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(text);
+
                 //mCollapsingToolBar.setExpandedTitleTextColor(ColorStateList.valueOf(getResources().getColor(R.color.primary_text)));
             }else {
 
