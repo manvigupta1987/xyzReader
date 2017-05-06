@@ -15,6 +15,7 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
@@ -204,7 +205,7 @@ public class ArticleDetailFragment extends Fragment implements
 
                 }
             });
-            mPhotoView.setTransitionName(mTransitionName);
+            ViewCompat.setTransitionName(mPhotoView, mTransitionName);
             mPhotoView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
         } else {
             mRootView.setVisibility(View.GONE);

@@ -1,11 +1,14 @@
 package com.example.xyzreader.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 
 import com.android.volley.toolbox.NetworkImageView;
 
-public class DynamicHeightNetworkImageView extends NetworkImageView {
+@SuppressLint("AppCompatCustomView")
+public class DynamicHeightNetworkImageView extends ImageView {
     private float mAspectRatio = 1.5f;
 
     public DynamicHeightNetworkImageView(Context context) {

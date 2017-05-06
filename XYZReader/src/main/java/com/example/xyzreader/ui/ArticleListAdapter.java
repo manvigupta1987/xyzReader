@@ -22,6 +22,7 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.utils.Utils;
+import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -70,8 +71,6 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                 intent.putExtra(Utils.TRANSITION_STRING,view.findViewById(R.id.thumbnail).getTransitionName());
 
                 Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail),view.findViewById(R.id.thumbnail).getTransitionName());
-                //Pair<View, String> p2 = Pair.create(view.findViewById(R.id.article_title),mContext.getString(R.string.bookName_transition) );
-                //Pair<View, String> p3 = Pair.create(view.findViewById(R.id.article_subtitle), mContext.getString(R.string.author_transition));
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)mContext,p1);
                 mContext.startActivity(intent,options.toBundle());
             }
@@ -85,40 +84,20 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         mCursor.moveToPosition(position);
         holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
         holder.titleView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
-        Date publishedDate = parsePublishedDate();
-        if (!publishedDate.before(START_OF_EPOCH.getTime())) {
-
-            holder.subtitleView.setText(Html.fromHtml(
-                    DateUtils.getRelativeTimeSpanString(
-                            publishedDate.getTime(),
-                            System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-                            DateUtils.FORMAT_ABBREV_ALL).toString()
-                            + "<br/>" + " by "
-                            + mCursor.getString(ArticleLoader.Query.AUTHOR)));
-        } else {
-            holder.subtitleView.setText(Html.fromHtml(
-                    outputFormat.format(publishedDate)
-                            + "<br/>" + " by "
-                            + mCursor.getString(ArticleLoader.Query.AUTHOR)));
-        }
+        holder.subtitleView.setText(DateUtils.getRelativeTimeSpanString(
+                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
+                    System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
+                    DateUtils.FORMAT_ABBREV_ALL).toString()
+                    + " by "
+                    + mCursor.getString(ArticleLoader.Query.AUTHOR));
         holder.subtitleView.setContentDescription(mContext.getString(R.string.a11y_book_subtitle,holder.subtitleView.getText()));
-        holder.thumbnailView.setImageUrl(
-                mCursor.getString(ArticleLoader.Query.THUMB_URL),
-                ImageLoaderHelper.getInstance(mContext).getImageLoader());
+        String urlString = mCursor.getString(ArticleLoader.Query.THUMB_URL);
+        Picasso.with(mContext)
+                .load(urlString)
+                .into(holder.thumbnailView);
         holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         holder.thumbnailView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
         ViewCompat.setTransitionName(holder.thumbnailView,mContext.getString(R.string.image_transition) + position);
-    }
-
-    private Date parsePublishedDate() {
-        try {
-            String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
-            return dateFormat.parse(date);
-        } catch (ParseException ex) {
-            Timber.e(ex, ex.getMessage());
-            Timber.d("passing today's date");
-            return new Date();
-        }
     }
 
     @Override
