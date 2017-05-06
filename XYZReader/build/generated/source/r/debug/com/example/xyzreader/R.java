@@ -2853,10 +2853,10 @@ containing a value of this type.
         public static final int all=0x7f0e0036;
         public static final int always=0x7f0e003a;
         public static final int appbar=0x7f0e0075;
-        public static final int article_body=0x7f0e008b;
-        public static final int article_byline=0x7f0e0091;
-        public static final int article_subtitle=0x7f0e008f;
-        public static final int article_title=0x7f0e008e;
+        public static final int article_body=0x7f0e008d;
+        public static final int article_byline=0x7f0e008c;
+        public static final int article_subtitle=0x7f0e0091;
+        public static final int article_title=0x7f0e0090;
         public static final int auto=0x7f0e0025;
         public static final int beginning=0x7f0e0038;
         public static final int bottom=0x7f0e0026;
@@ -2913,7 +2913,7 @@ containing a value of this type.
         public static final int main_content=0x7f0e0086;
         public static final int masked=0x7f0e00aa;
         public static final int media_actions=0x7f0e0098;
-        public static final int meta_bar=0x7f0e0090;
+        public static final int meta_bar=0x7f0e008b;
         public static final int middle=0x7f0e0039;
         public static final int mini=0x7f0e0037;
         public static final int multiply=0x7f0e001f;
@@ -2954,7 +2954,7 @@ containing a value of this type.
         public static final int search_src_text=0x7f0e006d;
         public static final int search_voice_btn=0x7f0e0071;
         public static final int select_dialog_listview=0x7f0e0072;
-        public static final int share_fab=0x7f0e008c;
+        public static final int share_fab=0x7f0e008e;
         public static final int shortcut=0x7f0e005c;
         public static final int showCustom=0x7f0e0015;
         public static final int showHome=0x7f0e0016;
@@ -2981,7 +2981,7 @@ containing a value of this type.
         public static final int text_input_password_toggle=0x7f0e0085;
         public static final int textinput_counter=0x7f0e0009;
         public static final int textinput_error=0x7f0e000a;
-        public static final int thumbnail=0x7f0e008d;
+        public static final int thumbnail=0x7f0e008f;
         public static final int time=0x7f0e009d;
         public static final int title=0x7f0e004a;
         public static final int titleDividerNoCustom=0x7f0e0059;

@@ -572,7 +572,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="toolbar_elevation">8dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item format="float" name="detail_body_line_spacing_multiplier" type="fraction">1.25</item>

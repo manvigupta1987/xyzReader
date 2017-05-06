@@ -84,12 +84,12 @@
         "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/design_ic_visibility.png",
         "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/drawable-xxxhdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png",

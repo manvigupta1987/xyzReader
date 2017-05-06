@@ -1,10 +1,12 @@
 package com.example.xyzreader.ui;
 
 import android.animation.Animator;
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
@@ -59,6 +61,7 @@ public class ArticleDetailFragment extends Fragment implements
     private ImageButton mUpButton;
     private Cursor mCursor;
     private CollapsingToolbarLayout mCollapsingToolBar;
+    private TextView titleView;
     private FloatingActionButton mFab;
     private boolean landscape_layout = false;
 
@@ -107,12 +110,17 @@ public class ArticleDetailFragment extends Fragment implements
         //mUpButtonContainer = (View) mRootView.findViewById(R.id.up_container);
         mUpButton = (ImageButton)mRootView.findViewById(R.id.action_up);
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+        if(!landscape_layout){
+            mCollapsingToolBar = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
+        }else {
+             titleView= (TextView) mRootView.findViewById(R.id.article_title);
+        }
 
         if(!landscape_layout) {
             final Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
             ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
             //To disable the collapsing tool bar title.
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
 
             mUpButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -154,13 +162,13 @@ public class ArticleDetailFragment extends Fragment implements
     }
 
 
+    @TargetApi(Build.VERSION_CODES.N)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void bindViews() {
         if (mRootView == null) {
             return;
         }
 
-        TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
@@ -170,29 +178,23 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-            titleView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
-            String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
-            Date publishedDate = Utils.parsePublishedDate(date);
-            if (!publishedDate.before(Utils.START_OF_EPOCH.getTime())) {
-                bylineView.setText(Html.fromHtml(
-                        DateUtils.getRelativeTimeSpanString(
-                                publishedDate.getTime(),
-                                System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-                                DateUtils.FORMAT_ABBREV_ALL).toString()
-                                + " by <font color='#ffffff'>"
-                                + mCursor.getString(ArticleLoader.Query.AUTHOR)
-                                + "</font>"));
+            String text = mCursor.getString(ArticleLoader.Query.TITLE);
+            if(!landscape_layout) {
+                mCollapsingToolBar.setTitleEnabled(true);
+                mCollapsingToolBar.setTitle(text);
+                //mCollapsingToolBar.setExpandedTitleTextColor(ColorStateList.valueOf(getResources().getColor(R.color.primary_text)));
+            }else {
 
-            } else {
-                // If date is before 1902, just show the string
-                bylineView.setText(Html.fromHtml(
-                        Utils.outputFormat.format(publishedDate) + " by <font color='#ffffff'>"
-                                + mCursor.getString(ArticleLoader.Query.AUTHOR)
-                                + "</font>"));
-
+                titleView.setText(text);
+                titleView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
             }
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY)));
+            bylineView.setText(DateUtils.getRelativeTimeSpanString(
+                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
+                    System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
+                    DateUtils.FORMAT_ABBREV_ALL).toString()
+                    + " by "
+                    + mCursor.getString(ArticleLoader.Query.AUTHOR));
+            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY),Html.FROM_HTML_MODE_COMPACT));
             Picasso.with(getActivity()).load(mCursor.getString(ArticleLoader.Query.PHOTO_URL))
                     .config(Bitmap.Config.RGB_565).into(mPhotoView, new Callback() {
                 @Override
@@ -202,14 +204,15 @@ public class ArticleDetailFragment extends Fragment implements
 
                 @Override
                 public void onError() {
-
                 }
             });
             ViewCompat.setTransitionName(mPhotoView, mTransitionName);
-            mPhotoView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
+            mPhotoView.setContentDescription(getString(R.string.a11y_book_image,text));
         } else {
             mRootView.setVisibility(View.GONE);
-            titleView.setText("N/A");
+            if(landscape_layout) {
+                titleView.setText("N/A");
+            }
             bylineView.setText("N/A" );
             bodyView.setText("N/A");
         }
@@ -223,7 +226,7 @@ public class ArticleDetailFragment extends Fragment implements
                 int primaryDark = getResources().getColor(R.color.primary_dark);
                 int primary = getResources().getColor(R.color.primary_light);
                 if(!landscape_layout) {
-                    mCollapsingToolBar = (CollapsingToolbarLayout) getActivity().findViewById(R.id.collapsing_toolbar);
+                    //mCollapsingToolBar = (CollapsingToolbarLayout) getActivity().findViewById(R.id.collapsing_toolbar);
                     mCollapsingToolBar.setContentScrimColor(palette.getMutedColor(primary));
                     mCollapsingToolBar.setStatusBarScrimColor(palette.getDarkMutedColor(primaryDark));
                 }
