@@ -94,7 +94,6 @@
         android:src="@drawable/ic_share"
         android:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z"
         app:fabSize="normal"
         app:borderWidth="0dp"/>
 </android.support.design.widget.CoordinatorLayout>
