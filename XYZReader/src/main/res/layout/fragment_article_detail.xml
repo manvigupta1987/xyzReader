@@ -22,14 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
-            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            tools:ignore="InconsistentLayout"> <!-- each child of appbarlayout defines scroll flags which defines
-            the behaviour when nested scrolling takes place. -->
+            tools:ignore="InconsistentLayout">
 
             <FrameLayout
                 android:id="@+id/photo_container"
@@ -48,54 +47,55 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/photo_background_protection"/>
+                    android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="@dimen/toolbar_elevation"
                 app:layout_collapseMode="pin"
-                app:layout_scrollFlags ="scroll|enterAlways"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
-        android:layout_height="match_parent"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:background="#fff"
             android:maxWidth="@dimen/detail_card_max_width"
-            android:background="#fff">
+            android:orientation="vertical">
 
-        <LinearLayout android:id="@+id/meta_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#333"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:layout_marginBottom="@dimen/margin_left"
-            android:paddingBottom="@dimen/detail_metabar_vert_padding"
-            android:paddingLeft="@dimen/detail_inner_horiz_margin"
-            android:paddingRight="@dimen/detail_inner_horiz_margin"
-            android:paddingTop="@dimen/detail_metabar_vert_padding"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-            <TextView
-                android:id="@+id/article_byline"
-                style="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/meta_bar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#8fff" />
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/margin_left"
+                android:background="#333"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/detail_metabar_vert_padding"
+                android:paddingLeft="@dimen/detail_inner_horiz_margin"
+                android:paddingRight="@dimen/detail_inner_horiz_margin"
+                android:paddingTop="@dimen/detail_metabar_vert_padding">
+
+                <TextView
+                    android:id="@+id/article_byline"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#8fff" />
 
             </LinearLayout>
 
@@ -104,31 +104,32 @@
                 style="?android:attr/textAppearanceMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_left"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginStart="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_right"
                 android:layout_marginEnd="@dimen/margin_right"
-                android:textColorLink="@color/theme_accent"
-                android:textSize="@dimen/detail_body_text_size"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginStart="@dimen/margin_left"
+                android:layout_marginTop="@dimen/margin_left"
                 android:ellipsize="end"
+                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                 android:maxLines="30"
-                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
+                android:textColorLink="@color/theme_accent"
+                android:textSize="@dimen/detail_body_text_size" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/share_fab"
-        android:background="@drawable/btn_drawable"
-        android:layout_margin="@dimen/fab_margin"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_share"
-        android:elevation="@dimen/fab_elevation"
+        android:layout_margin="@dimen/fab_margin"
+        android:background="@drawable/btn_drawable"
         android:contentDescription="@string/action_share"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z"
-        app:fabSize="normal"
+        android:elevation="@dimen/fab_elevation"
+        android:src="@drawable/ic_share"
         app:borderWidth="0dp"
+        app:fabSize="normal"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end"/>
+        app:layout_anchorGravity="bottom|end"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
 </android.support.design.widget.CoordinatorLayout>
