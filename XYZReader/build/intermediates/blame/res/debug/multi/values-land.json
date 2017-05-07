@@ -11,7 +11,14 @@
                     "endOffset": 89
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/bools.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/bools.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 38,
+                        "endOffset": 89
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 159
                 },
                 "from": {
-                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml"
+                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 69,
+                        "endOffset": 120
+                    }
                 }
             },
             {
@@ -35,7 +49,14 @@
                     "endOffset": 223
                 },
                 "from": {
-                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml"
+                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 125,
+                        "endColumn": 63,
+                        "endOffset": 184
+                    }
                 }
             },
             {
@@ -47,7 +68,14 @@
                     "endOffset": 294
                 },
                 "from": {
-                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml"
+                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 189,
+                        "endColumn": 70,
+                        "endOffset": 255
+                    }
                 }
             },
             {
@@ -59,7 +87,14 @@
                     "endOffset": 362
                 },
                 "from": {
-                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml"
+                    "file": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 260,
+                        "endColumn": 67,
+                        "endOffset": 323
+                    }
                 }
             },
             {
@@ -71,7 +106,14 @@
                     "endOffset": 419
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 36,
+                        "endColumn": 56,
+                        "endOffset": 88
+                    }
                 }
             },
             {
@@ -83,7 +125,14 @@
                     "endOffset": 477
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 93,
+                        "endColumn": 57,
+                        "endOffset": 146
+                    }
                 }
             },
             {
@@ -95,7 +144,14 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 151,
+                        "endColumn": 42,
+                        "endOffset": 189
+                    }
                 }
             },
             {
@@ -107,7 +163,14 @@
                     "endOffset": 562
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-land/macro_layout.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 194,
+                        "endColumn": 41,
+                        "endOffset": 231
+                    }
                 }
             },
             {
@@ -120,7 +183,15 @@
                     "endOffset": 744
                 },
                 "from": {
-                    "file": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/values-land/values-land.xml"
+                    "file": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 232
+                    }
                 }
             }
         ]

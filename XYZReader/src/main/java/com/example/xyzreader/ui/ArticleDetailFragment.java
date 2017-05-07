@@ -33,6 +33,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.florent37.picassopalette.PicassoPalette;
 import com.squareup.picasso.Callback;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -178,9 +179,6 @@ public class ArticleDetailFragment extends Fragment implements
             if(!landscape_layout) {
                 mCollapsingToolBar.setTitleEnabled(true);
                 mCollapsingToolBar.setTitle(text);
-                //((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(text);
-
-                //mCollapsingToolBar.setExpandedTitleTextColor(ColorStateList.valueOf(getResources().getColor(R.color.primary_text)));
             }else {
 
                 titleView.setText(text);
@@ -193,17 +191,17 @@ public class ArticleDetailFragment extends Fragment implements
                     + " by "
                     + mCursor.getString(ArticleLoader.Query.AUTHOR));
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY),Html.FROM_HTML_MODE_COMPACT));
-            Picasso.with(getActivity()).load(mCursor.getString(ArticleLoader.Query.PHOTO_URL))
-                    .config(Bitmap.Config.RGB_565).into(mPhotoView, new Callback() {
-                @Override
-                public void onSuccess() {
-                        createPalette();
-                }
 
-                @Override
-                public void onError() {
-                }
-            });
+            String imageUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
+            Picasso.with(getActivity()).load(imageUrl)
+                   .config(Bitmap.Config.RGB_565).into(mPhotoView, PicassoPalette.with(imageUrl,mPhotoView)
+                    .use(PicassoPalette.Profile.MUTED_DARK)
+                    .intoCallBack(new PicassoPalette.CallBack() {
+                        @Override
+                        public void onPaletteLoaded(Palette palette) {
+                            createPalette(palette);
+                        }
+                    }));
             ViewCompat.setTransitionName(mPhotoView, mTransitionName);
             mPhotoView.setContentDescription(getString(R.string.a11y_book_image,text));
         } else {
@@ -216,23 +214,16 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
-    private void createPalette(){
-        Bitmap bitmap = ((BitmapDrawable) mPhotoView.getDrawable()).getBitmap();
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-            @Override
-            public void onGenerated(Palette palette) {
+    private void createPalette(Palette palette){
                 int primaryDark = getResources().getColor(R.color.primary_dark);
                 int primary = getResources().getColor(R.color.primary_light);
                 if(!landscape_layout) {
-                    //mCollapsingToolBar = (CollapsingToolbarLayout) getActivity().findViewById(R.id.collapsing_toolbar);
                     mCollapsingToolBar.setContentScrimColor(palette.getMutedColor(primary));
                     mCollapsingToolBar.setStatusBarScrimColor(palette.getDarkMutedColor(primaryDark));
                 }
                 setStatusBarColor(palette.getDarkMutedColor(primaryDark));
                 mRootView.findViewById(R.id.meta_bar).setBackgroundColor(palette.getDarkMutedColor(0xFF333333));
-            }
-        });
-    }
+        }
 
     private void setStatusBarColor(int darkMutedColor){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){

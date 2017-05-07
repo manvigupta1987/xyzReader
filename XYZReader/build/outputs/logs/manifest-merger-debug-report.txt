@@ -32,7 +32,6 @@ ADDED from /home/manvi/gitRepos/xyzReader/XYZReader/src/main/AndroidManifest.xml
 application
 ADDED from /home/manvi/gitRepos/xyzReader/XYZReader/src/main/AndroidManifest.xml:11:5-49:19
 MERGED from [com.android.support:support-v13:25.3.1] /home/manvi/.android/build-cache/eade7a8583c6dc3d768eeea7e1da6ea2189560fc/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] /home/manvi/.android/build-cache/da47b63f4f415dca1fe358955646d981e5dde100/output/AndroidManifest.xml:26:5-20
 MERGED from [com.jakewharton.timber:timber:4.5.1] /home/manvi/.android/build-cache/8bd5914dfeba8c33fe559dbf6604196ec9ed61d2/output/AndroidManifest.xml:8:5-20
 MERGED from [com.android.support:design:25.3.1] /home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/AndroidManifest.xml:29:5-20
@@ -40,6 +39,7 @@ MERGED from [com.android.support:appcompat-v7:25.3.1] /home/manvi/.android/build
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/manvi/.android/build-cache/da4cc82be107870dda4cb60dd400b8cec210f454/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/manvi/.android/build-cache/53b56b7d01087b6a2164734f1db83c02475375a2/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:25.3.1] /home/manvi/.android/build-cache/882a4efe1b757e9a9922c949679c839362bd11dd/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /home/manvi/.android/build-cache/ac4e58acf2f0d52e7058022fe43b6d86f4b7c5d0/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /home/manvi/.android/build-cache/0eb5f9e2d0c7b4dd3cc5f76aaa05da0bfd999fe6/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/manvi/.android/build-cache/56ce63f6cbab87fb76faddae6c3a2461e8d2ffea/output/AndroidManifest.xml:29:5-20
@@ -119,7 +119,6 @@ ADDED from /home/manvi/gitRepos/xyzReader/XYZReader/src/main/AndroidManifest.xml
 uses-sdk
 INJECTED from /home/manvi/gitRepos/xyzReader/XYZReader/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:support-v13:25.3.1] /home/manvi/.android/build-cache/eade7a8583c6dc3d768eeea7e1da6ea2189560fc/output/AndroidManifest.xml:21:5-23:55
-MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:cardview-v7:25.3.1] /home/manvi/.android/build-cache/da47b63f4f415dca1fe358955646d981e5dde100/output/AndroidManifest.xml:20:5-43
 MERGED from [com.jakewharton:butterknife:8.5.1] /home/manvi/.android/build-cache/afef1f1bfde5af264eaa07719de2f8d96e37fadc/output/AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton.timber:timber:4.5.1] /home/manvi/.android/build-cache/8bd5914dfeba8c33fe559dbf6604196ec9ed61d2/output/AndroidManifest.xml:6:5-43
@@ -129,6 +128,8 @@ MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/manvi/.a
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/manvi/.android/build-cache/53b56b7d01087b6a2164734f1db83c02475375a2/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/manvi/.android/build-cache/bf9913a3edf2028efc393622d6cc5b44aae2af80/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.3.1] /home/manvi/.android/build-cache/882a4efe1b757e9a9922c949679c839362bd11dd/output/AndroidManifest.xml:20:5-44
+MERGED from [com.github.florent37:picassopalette:2.0.0] /home/manvi/.android/build-cache/b24e63407458c53f101b47af2d6b925111acd461/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:25.3.1] /home/manvi/.android/build-cache/ac4e58acf2f0d52e7058022fe43b6d86f4b7c5d0/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] /home/manvi/.android/build-cache/0eb5f9e2d0c7b4dd3cc5f76aaa05da0bfd999fe6/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/manvi/.android/build-cache/56ce63f6cbab87fb76faddae6c3a2461e8d2ffea/output/AndroidManifest.xml:21:5-23:63
@@ -145,7 +146,6 @@ MERGED from [com.android.support:support-compat:25.3.1] /home/manvi/.android/bui
 		INJECTED from /home/manvi/gitRepos/xyzReader/XYZReader/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:support-v13:25.3.1] /home/manvi/.android/build-cache/eade7a8583c6dc3d768eeea7e1da6ea2189560fc/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:cardview-v7:25.3.1] /home/manvi/.android/build-cache/da47b63f4f415dca1fe358955646d981e5dde100/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:design:25.3.1] /home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/AndroidManifest.xml:25:5-27:34
@@ -153,6 +153,7 @@ MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/manvi/.a
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/manvi/.android/build-cache/53b56b7d01087b6a2164734f1db83c02475375a2/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/manvi/.android/build-cache/bf9913a3edf2028efc393622d6cc5b44aae2af80/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:transition:25.3.1] /home/manvi/.android/build-cache/882a4efe1b757e9a9922c949679c839362bd11dd/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:palette-v7:25.3.1] /home/manvi/.android/build-cache/85f5e4e044f6872cfffc1e9ddae925c505f30156/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.1] /home/manvi/.android/build-cache/ac4e58acf2f0d52e7058022fe43b6d86f4b7c5d0/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] /home/manvi/.android/build-cache/0eb5f9e2d0c7b4dd3cc5f76aaa05da0bfd999fe6/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/manvi/.android/build-cache/56ce63f6cbab87fb76faddae6c3a2461e8d2ffea/output/AndroidManifest.xml:25:5-27:34

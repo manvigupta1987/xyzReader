@@ -48,6 +48,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/manvi/.android/build-cache/b24e63407458c53f101b47af2d6b925111acd461/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3887e2a6307a5a672462776bcfe2eb765b05aa82">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_14e0810d1795826fe7794cda345d833c57469626.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/manvi/gitRepos/xyzReader/XYZReader/libs/volley.jar"
         jumboMode="false"
         optimize="true"

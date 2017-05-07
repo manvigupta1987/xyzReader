@@ -11,7 +11,14 @@
                     "endOffset": 104
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-w800dp/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-w800dp/macro_layout.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 53,
+                        "endOffset": 154
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 154
                 },
                 "from": {
-                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-w800dp/macro_layout.xml"
+                    "file": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/values-w800dp/macro_layout.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 34,
+                        "endColumn": 49,
+                        "endOffset": 79
+                    }
                 }
             }
         ]
