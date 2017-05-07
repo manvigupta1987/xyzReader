@@ -1,27 +1,27 @@
 [
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "source": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-v21/notification_action_background.xml"
+        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
-        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/drawable-v21/design_password_eye.xml"
+        "source": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/drawable-v21/design_password_eye.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
-        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/drawable-v21/avd_hide_password.xml"
+        "source": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/drawable-v21/avd_hide_password.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/white_selectable_item_background_circle.xml",
@@ -29,10 +29,10 @@
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/home/manvi/.android/build-cache/378244d7a749d56873adb9c61fadf9d7cc315830/output/res/drawable-v21/abc_edit_text_material.xml"
+        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
-        "source": "/home/manvi/.android/build-cache/1aa0f6e5dee90912e387c238be89f1c30e3506f2/output/res/drawable-v21/avd_show_password.xml"
+        "source": "/home/manvi/.android/build-cache/8071addda76e07ce4175114221a1991617c6af3f/output/res/drawable-v21/avd_show_password.xml"
     }
 ]

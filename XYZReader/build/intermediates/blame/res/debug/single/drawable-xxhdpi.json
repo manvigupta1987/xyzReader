@@ -6,9 +6,5 @@
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_share.png",
         "source": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/drawable-xxhdpi/ic_share.png"
-    },
-    {
-        "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_arrow_back.png",
-        "source": "/home/manvi/gitRepos/xyzReader/XYZReader/src/main/res/drawable-xxhdpi/ic_arrow_back.png"
     }
 ]

@@ -27,7 +27,8 @@
             app:expandedTitleMarginStart="48dp"
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"> <!-- each child of appbarlayout defines scroll flags which defines
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            tools:ignore="InconsistentLayout"> <!-- each child of appbarlayout defines scroll flags which defines
             the behaviour when nested scrolling takes place. -->
 
             <FrameLayout

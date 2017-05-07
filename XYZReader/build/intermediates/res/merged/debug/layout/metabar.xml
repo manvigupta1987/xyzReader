@@ -2,7 +2,6 @@
 <LinearLayout android:id="@+id/meta_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#333"
     android:layout_gravity="bottom"
     android:orientation="vertical"
     android:layout_marginBottom="@dimen/margin_left"

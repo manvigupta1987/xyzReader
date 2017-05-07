@@ -13,10 +13,5 @@
     <dimen name="toolbar_elevation">4dp</dimen>
 
     <dimen name="card_margin">4dp</dimen>
-    <dimen name="card_elevation">8dp</dimen>
-    <dimen name="app_bar_height">168dp</dimen>
-    <dimen name="image_height">250dp</dimen>
-    <dimen name="consent_insert">0dp</dimen>
-    <dimen name="image_button_top_margin">6dp</dimen>
 
 </resources>
