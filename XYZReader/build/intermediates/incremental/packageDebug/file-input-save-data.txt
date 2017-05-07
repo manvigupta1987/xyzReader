@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 06 19:48:50 EDT 2017
+#Sat May 06 19:56:03 EDT 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/resources-debug.ap_/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
