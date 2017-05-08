@@ -130,6 +130,7 @@
         android:src="@drawable/ic_share"
         app:borderWidth="0dp"
         app:fabSize="normal"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|end"/>
+        android:visibility="invisible"
+        app:layout_behavior="com.example.xyzreader.ui.FabBehavior"
+        android:layout_gravity="bottom|right"/>
 </android.support.design.widget.CoordinatorLayout>
