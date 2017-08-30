@@ -1,18 +1,18 @@
 [
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/layout-v21/notification_template_custom_big.xml"
+        "source": "/home/manvi/.android/build-cache/e79339438dc34ef988f4ac330c52f3f91f431a67/output/res/layout-v21/notification_template_custom_big.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/layout-v21/notification_template_icon_group.xml"
+        "source": "/home/manvi/.android/build-cache/e79339438dc34ef988f4ac330c52f3f91f431a67/output/res/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/layout-v21/notification_action.xml"
+        "source": "/home/manvi/.android/build-cache/e79339438dc34ef988f4ac330c52f3f91f431a67/output/res/layout-v21/notification_action.xml"
     },
     {
         "merged": "/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/home/manvi/.android/build-cache/12288201f4f0606ca741fb2b82be28f4a59946e3/output/res/layout-v21/notification_action_tombstone.xml"
+        "source": "/home/manvi/.android/build-cache/e79339438dc34ef988f4ac330c52f3f91f431a67/output/res/layout-v21/notification_action_tombstone.xml"
     }
 ]

@@ -16,7 +16,8 @@ import android.view.View;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
-import com.example.xyzreader.data.ItemsContract;
+import com.example.xyzreader.data.Items;
+import com.example.xyzreader.data.ItemsProvider;
 import com.example.xyzreader.utils.Utils;
 
 import butterknife.BindView;
@@ -68,14 +69,14 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                 }
 
-                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
+                mSelectedItemId = mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_ID));
                 //updateUpButtonPosition();
             }
         });
 
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().getData() != null) {
-                mStartId = ItemsContract.Items.getItemId(getIntent().getData());
+                mStartId = ItemsProvider.getItemId(getIntent().getData());
                 mSelectedItemId = mStartId;
                 mTransitionName = getIntent().getStringExtra(Utils.TRANSITION_STRING);
             }
@@ -97,7 +98,7 @@ public class ArticleDetailActivity extends AppCompatActivity
             mCursor.moveToFirst();
             // TODO: optimize
             while (!mCursor.isAfterLast()) {
-                if (mCursor.getLong(ArticleLoader.Query._ID) == mStartId) {
+                if (mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_ID)) == mStartId) {
                     final int position = mCursor.getPosition();
                     mPager.setCurrentItem(position, false);
                     break;
@@ -122,7 +123,7 @@ public class ArticleDetailActivity extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
             mCursor.moveToPosition(position);
-            return ArticleDetailFragment.newInstance(mCursor.getLong(ArticleLoader.Query._ID),mTransitionName);
+            return ArticleDetailFragment.newInstance(mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_ID)),mTransitionName);
         }
 
         @Override

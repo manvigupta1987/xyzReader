@@ -5,17 +5,13 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="23"
-        android:targetSdkVersion="25" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <meta-data
-        android:name="android.support.VERSION"
-        android:value="25.3.1" />
 
     <application
         android:name="com.example.xyzreader.xyzReader"
@@ -56,8 +52,13 @@
 
         <provider
             android:name="com.example.xyzreader.data.ItemsProvider"
-            android:authorities="com.example.xyzreader"
-            android:exported="false" />
+            android:authorities="com.example.xyzreader.data"
+            android:exported="false"
+            android:permission="com.example.android.xyzreader.provider.READ_WRITE" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.0.0" />
     </application>
 
 </manifest>

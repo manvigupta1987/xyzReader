@@ -17,13 +17,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
-import com.example.xyzreader.data.ArticleLoader;
-import com.example.xyzreader.data.ItemsContract;
+import com.example.xyzreader.data.Items;
+import com.example.xyzreader.data.ItemsProvider;
 import com.example.xyzreader.utils.Utils;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 /**
  * Created by manvi on 2/5/17.
@@ -42,7 +43,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @Override
     public long getItemId(int position) {
         mCursor.moveToPosition(position);
-        return mCursor.getLong(ArticleLoader.Query._ID);
+        return mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_ID));
     }
 
     @Override
@@ -53,8 +54,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW,
-                        ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                Intent intent = new Intent(mContext,ArticleDetailActivity.class);
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(ItemsProvider.buildItemUri(getItemId(vh.getAdapterPosition())));
                 intent.putExtra(Utils.TRANSITION_STRING,view.findViewById(R.id.thumbnail).getTransitionName());
 
                 Pair<View, String> p1 = Pair.create(view.findViewById(R.id.thumbnail),view.findViewById(R.id.thumbnail).getTransitionName());
@@ -68,23 +70,28 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(ArticalListViewHolder holder, int position) {
-        mCursor.moveToPosition(position);
-        holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-        holder.titleView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
-        holder.subtitleView.setText(DateUtils.getRelativeTimeSpanString(
-                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
+        if(mCursor.moveToPosition(position)) {
+            String title = mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_TITLE));
+            Long date = mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_PUBLISHED_DATE));
+            String author = mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_AUTHOR));
+
+            holder.titleView.setText(title);
+            holder.titleView.setContentDescription(mContext.getString(R.string.a11y_book_image, holder.titleView.getText()));
+            holder.subtitleView.setText(DateUtils.getRelativeTimeSpanString(date,
                     System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                     DateUtils.FORMAT_ABBREV_ALL).toString()
                     + " by "
-                    + mCursor.getString(ArticleLoader.Query.AUTHOR));
-        holder.subtitleView.setContentDescription(mContext.getString(R.string.a11y_book_subtitle,holder.subtitleView.getText()));
-        String urlString = mCursor.getString(ArticleLoader.Query.THUMB_URL);
-        Picasso.with(mContext)
-                .load(urlString)
-                .into(holder.thumbnailView);
-        holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
-        holder.thumbnailView.setContentDescription(mContext.getString(R.string.a11y_book_image,holder.titleView.getText()));
-        ViewCompat.setTransitionName(holder.thumbnailView,mContext.getString(R.string.image_transition) + position);
+                    + author);
+            holder.subtitleView.setContentDescription(mContext.getString(R.string.a11y_book_subtitle, holder.subtitleView.getText()));
+            String urlString = mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_THUMB_URL));
+            Picasso.with(mContext)
+                    .load(urlString)
+                    .into(holder.thumbnailView);
+            Timber.d("=================================Manvi Aspect======================" + mCursor.getColumnIndex(Items.COLUMN_ASPECT_RATIO));
+            holder.thumbnailView.setAspectRatio(mCursor.getFloat(mCursor.getColumnIndex(Items.COLUMN_ASPECT_RATIO)));
+            holder.thumbnailView.setContentDescription(mContext.getString(R.string.a11y_book_image, holder.titleView.getText()));
+            ViewCompat.setTransitionName(holder.thumbnailView, mContext.getString(R.string.image_transition) + position);
+        }
     }
 
     @Override
@@ -100,7 +107,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     public void swapCursor(Cursor cursor)
     {
         mCursor = cursor;
-        notifyDataSetChanged();
+        if(mCursor!=null) {
+            notifyDataSetChanged();
+        }
     }
 
     public class ArticalListViewHolder extends RecyclerView.ViewHolder {

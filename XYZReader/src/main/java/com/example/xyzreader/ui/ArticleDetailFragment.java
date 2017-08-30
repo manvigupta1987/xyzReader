@@ -9,7 +9,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -33,8 +32,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.xyzreader.data.Items;
 import com.github.florent37.picassopalette.PicassoPalette;
-import com.squareup.picasso.Callback;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.utils.Utils;
@@ -175,7 +174,7 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-            String text = mCursor.getString(ArticleLoader.Query.TITLE);
+            String text = mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_TITLE));
             if(!landscape_layout) {
                 mCollapsingToolBar.setTitleEnabled(true);
                 mCollapsingToolBar.setTitle(text);
@@ -185,14 +184,15 @@ public class ArticleDetailFragment extends Fragment implements
                 titleView.setContentDescription(getString(R.string.a11y_book_image,titleView.getText()));
             }
             bylineView.setText(DateUtils.getRelativeTimeSpanString(
-                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
+                    mCursor.getLong(mCursor.getColumnIndex(Items.COLUMN_PUBLISHED_DATE)),
                     System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                     DateUtils.FORMAT_ABBREV_ALL).toString()
                     + " by "
-                    + mCursor.getString(ArticleLoader.Query.AUTHOR));
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY),Html.FROM_HTML_MODE_COMPACT));
+                    + mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_AUTHOR)));
+            bodyView.setText(Html.fromHtml(mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_BODY)),
+                    Html.FROM_HTML_MODE_COMPACT));
 
-            String imageUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
+            String imageUrl = mCursor.getString(mCursor.getColumnIndex(Items.COLUMN_PHOTO_URL));
             Picasso.with(getActivity()).load(imageUrl)
                    .config(Bitmap.Config.RGB_565).into(mPhotoView, PicassoPalette.with(imageUrl,mPhotoView)
                     .use(PicassoPalette.Profile.MUTED_DARK)
@@ -253,7 +253,9 @@ public class ArticleDetailFragment extends Fragment implements
             mCursor.close();
             mCursor = null;
         }
-        bindViews();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            bindViews();
+        }
         mRootView.getViewTreeObserver().addOnPreDrawListener(
                 new ViewTreeObserver.OnPreDrawListener() {
                     @Override

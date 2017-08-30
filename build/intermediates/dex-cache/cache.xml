@@ -3,12 +3,372 @@
 
     <item
         is-multidex="false"
+        jar="/home/manvi/.android/build-cache/a30a6e9754ee8ffecdc89b92782cac9286993053/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dd2e7a567260ca4e40c09ba330f4f2d318660554">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_f805e5e751fa9a90a3bc82f928c5a02975ef4dcf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/19494c0a3115bdf0dc0d80d232bbe0c17ceaed84/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b102f892442929c3457de1ef6a94f5dda3dd8864">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_19de62aa817c7330ed350fb05479f56078812cd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/e79339438dc34ef988f4ac330c52f3f91f431a67/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8602ab07133e6ee182726fa27588420dba9d6d55">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_9b0bdd7f451fd1f104ec6233b645b7e62de6b687.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/f10458317f2d1bb823f47c00a4a057fbfe05cfcd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="905f3e63973d47fedf2d945fa31d8c0f0c98816e">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/classes_3289b91c9e42177de47a4daea7593d73ffeb4ae6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/29051456207422c8f95aa2e58890c9239512b13f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7e11799d8a26bfa5d48acafe012ee5545b9bf468">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/classes_77df6d815542eb3c645d90ffe57444c276b943b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/c83782c381f3869e86e102e1509a8e6624ac204d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_0b8e2b759aa862f85eeeaf6924c67d11502a40e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/173859ece93dc03d720df4d075b298d213078671/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="796f9229948e907471c5595fbe94655ccf03ff73">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/classes_c50335f55a0b094c10b895c7eb73eeae10271b16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/55b6b37686a4c1592003554576ef7d1340628475/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5a9bcb4bddc7efd24c058c136dccf143fa785104">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_d595145f1867d5eb54809310f58779c3d055cfb7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.1.2/7052283359001bb108753cb0583a887d3bf94c82/okhttp-3.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7052283359001bb108753cb0583a887d3bf94c82">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/okhttp-3.1.2_46dcacc843decb0f7379c6385df2f9650a83a0d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/68e7747659d5abfc0b356677534e2d5ce9e54df0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="0b23a4680702838a490b02540e1c078631b812d9">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_5006a96b2421c333d05e63ccbff989a9a1d3875b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/4e5161e494e5493aecf6f913b2a9d0cef817e18c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="df733e6865d662899ec247e8c3dbff3e0961b8a7">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_5dfc4d9830d0f9a05c2177ded3216d6bddbcd609.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/9636f24aec80762cd721fad74090cee3bda22007/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a911183570522956a9d96af5dc5021a2588d435d">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_dac58758587794aaf5393bc49377cd30dfda6643.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/f9286c96da1a7c65268a316ac6c19a5c6d3b678c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d115b0e9e1501135fe91254ba884fcbd83d374c0">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/classes_81c8bc0f4122ee80d6fbf2ceb0d3c55b6fc9178c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/98c7eff2a5a067734354d15ba5164eebb6e35a18/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1a94a06ec585c9423a3c03bde1f7bf9268f83d66">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_5cb8adf99a812f1f97c2778064905677f46841a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/8e1d374db897ba054004b43b57fdbc7c5eed02ff/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="db0171d21d064bab7ad72685f3c7df40544b03a8">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_a048291415ded50d5e1e8820675e3804b8f13162.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/okio-1.6.0_88d37ba56378fbf4264a88af0d6a097d97c7d35a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5de0c73fef18917cd85d0ab70bb23818685e4dfd">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/hamcrest-integration-1.3_1079a5409cca50337d0d3a2411b8f3b7f74c2e53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/c029237b0d393e3dac218c26916d6f8c39b96da9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="f7b86f1beb2b3625c6a1a5da6b5fc5294b64aea9">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_5aa1bb211aee527333d1dcec22dc3b3e1b56086e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0-alpha9/e39a71ca926d563e2ed87e18ded116960194532e/common-1.0.0-alpha9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e39a71ca926d563e2ed87e18ded116960194532e">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/common-1.0.0-alpha9_c5aa73b749d8dee0eaef5e7dae93b4c3f4f7789d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/c929d372c1f64202da147e90b3799c168588e639/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8375c7bb9ff7fb396f21f44b450a7815edcc1fea">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_12403cfdc54d36de4af01cff840156ec35c066a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/f5eec3616fa11386c44b527f5586dd54788c1dac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d30ac0c26495d7264529e333cec806eec64dd6f3">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_74a1d33905f06853c6dd37be771e858dd2a507b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/gitRepos/xyzReader/XYZReader/libs/volley.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c68094cbd011a3f9dccbfe16e77a2cf43622e277">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/volley_d9c1f38dd38b5ab9847725a718c85cb3f7451ad3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="67ff45d9ae02e583d0f9b3432a5ebbe05c30c966">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/javawriter-2.1.1_9fb0702dac243a30d5682982fa133cafaa025e27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/13e319f5e04cd1c5b6ef26e74161de77ffaef41a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a890ee8445927649d9ed50f625a315d8758688be">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/classes_d184e0e58ff28d001357deaa933d31a538583837.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/jsr305-2.0.1_8b74dc593558d8f3362909318f0437dca394af74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4785a3c21320980282f9f33d0d1264a69040538f">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/hamcrest-library-1.3_7ae4dad7753a04ecacf07cec61487d13fff40589.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/9b0594e9eb3c776565590ead922801008e07e457/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="cbb26a4f659b17abc1f75ff735a607aa299697ac">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_e93cb507853931446e48de5db09d9e4dfde2ac2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/hamcrest-core-1.3_1b1374b938dd683364d4e849dca7a4a3604e4834.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/manvi/gitRepos/xyzReader/XYZReader/libs/volley.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="c68094cbd011a3f9dccbfe16e77a2cf43622e277">
         <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/volley_d9c1f38dd38b5ab9847725a718c85cb3f7451ad3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.0.0/db09a97f4f0db8892c1a0111a4b966f97920d082/support-annotations-26.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="db09a97f4f0db8892c1a0111a4b966f97920d082">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/support-annotations-26.0.0_8a746fd7c65fec828051adde0f5782ddb84fa948.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/javax.inject-1_3b065deb75639ed706aee45cd70b1468e06d3fc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/b24e63407458c53f101b47af2d6b925111acd461/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3887e2a6307a5a672462776bcfe2eb765b05aa82">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_14e0810d1795826fe7794cda345d833c57469626.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="479c1e06db31c432330183f5cae684163f186146">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/javax.annotation-api-1.2_46c48d97c061c7980484b355254433593a867312.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/android.arch.persistence.room/common/1.0.0-alpha9/863651d5dcd5d28bd43475d2a3e6406c11cc4462/common-1.0.0-alpha9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="863651d5dcd5d28bd43475d2a3e6406c11cc4462">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/common-1.0.0-alpha9_316570ae8e2ab9a752a130fc7e3c09df7720c25a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/4e69c6917b1b40a9e41d78b3b7ad55f01f7613a6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_495f55c332d18b5defea97d736363c74102a1ab9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/androidTest/debug/junit-4.12_9e38e9d0aad071e3888618077a316a4c26283254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/bbb2f8ae6f44ae29ed6c57f3907f4dc3e9657280/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2f02ba4e10cb167c1f5526053047f520a5bcb68f">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_8cebcba7793cd97cde42b688ee7db7b1472fad43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/5713d449aafbf98e86f548c08a109de24667543c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="55017f499d51c6b3ad5fdb1247a7d775e3346e1a">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_85c9e3af12b5ec63bbee2bd39c2a388ada902eab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/fecd8da0c8334de2f153c53d24d886d2bff6aaae/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a8655e6077da9526c0c94bf063f1275430ce8574">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_eae65bdca49f88b51ec8264a3b0e576d78d81faa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/9ebc9f7852f250a518d7b53e2a785b632c2dd6c8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6fdbd1bd6503815f2cef20a9a137005e5953aad1">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_13e782628cb8d3d4f948d522389731c67b851312.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/manvi/.android/build-cache/613b03e1d1e603fd72464df32980bb2cf478a7a3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2520dd452fb1f487eba29ccd2d44358f0b8da788">
+        <dex dex="/home/manvi/gitRepos/xyzReader/XYZReader/build/intermediates/pre-dexed/debug/classes_8b9293140ba8ffcccb0e4a015a6a54753b85601a.jar" />
     </item>
 
 </items>

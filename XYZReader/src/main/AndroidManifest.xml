@@ -43,8 +43,9 @@
             android:exported="false" />
 
         <provider android:name=".data.ItemsProvider"
-            android:authorities="com.example.xyzreader"
-            android:exported="false" />
+            android:authorities="com.example.xyzreader.data"
+            android:exported="false"
+            android:permission="com.example.android.xyzreader.provider.READ_WRITE"/>
 
     </application>
 
