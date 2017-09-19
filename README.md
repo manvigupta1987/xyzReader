@@ -1,27 +1,30 @@
-Udacity - Android Developer Nanodegree - Projects 5: Make Your App Material
+#xyzReader
 
-This project involves redesigning an app to follow the Material Design guidelines and translate a set of static design mocks to a living and breathing app. It gives an opportunity to improve an app’s design, a vital skill for building apps users will love. It also replicates a common developer task of updating and changing an app's design as new standards are released.
+This project involves redesigning an app to follow the Material Design guidelines and translate a set of static design mocks to a living and breathing app.It gives an opportunity to improve an app’s design, a vital skill for building apps users will love. It also replicates a common developer task of updating and changing an app's design as new standards are released.
+XYZ reader is a mock RSS feed reader about all things bacon.
 
-<br /><br />
-**Main Screen**<br />
-![alt tag](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Screenshot_20170620-163259.png)
-<br /><br />
-**Detail Screen**<br />
-![alt tag](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Screenshot_20170620-163318.png)
-<br /><br />
-**Detail Screen With collapsing tool bar**<br />
-![alt tag](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Screenshot_20170620-163327.png)
+## Libraries
+
+* [okHttp](http://square.github.io/okhttp/)
+* [Room](https://developer.android.com/topic/libraries/architecture/room.html)
+* [ButterKnife](https://github.com/JakeWharton/butterknife)
+* [Picasso](http://square.github.io/picasso/)
+* [Color Palette API](https://developer.android.com/training/material/palette-colors.html)
+* [Timber](https://github.com/JakeWharton/timber)
 
 
-Project Specification
+## UI Component
+* [View Pager](https://github.com/codepath/android_guides/wiki/ViewPager-with-FragmentPagerAdapter)
+* [Staggered GridLayout](https://developer.android.com/reference/android/support/v7/widget/StaggeredGridLayoutManager.html)
+* [recyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
+* [CollapsingToolBar](https://developer.android.com/reference/android/support/design/widget/CollapsingToolbarLayout.html)
+* [NestedScrollView](https://developer.android.com/reference/android/support/v4/widget/NestedScrollView.html)
+* [Cardview](https://developer.android.com/reference/android/support/v7/widget/CardView.html)
+* [CordinatorLayout](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)
+* [SwipeRefresh Layout](https://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)
+* [SnackBar](https://developer.android.com/reference/android/support/design/widget/Snackbar.html)
+* [FloatingActionButton](https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.html)
 
-App uses the Design Support library and its provided widget types (FloatingActionButton, AppBarLayout, SnackBar, etc).
-App uses CoordinatorLayout for the main activity.
-App theme extends from AppCompat.
-App uses an AppBar and associated Toolbars.
-App provides a Floating Action Button for the most common action(s).
-App properly specifies elevations for app bars, FABs, and other elements specified in the Material Design specification.
-App has a consistent color theme defined in styles.xml . Color theme does not impact usability of the app.
-App provides suficient space between text and surrounding elements.
-App uses images that are high quality, specific, and full bleed.
-App uses fonts that are either the Android defaults, are complementary, and aren't otherwise distracting.
+
+## Screens
+![Screenshot1](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Nexus%206P-Screenshot1.png) ![Screenshot2](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Nexus%206P-Screenshot2.png) ![Screenshot3](https://github.com/manvigupta1987/xyzReader/blob/master/ScreenShots/Nexus%206P-Screenshot3.png)
